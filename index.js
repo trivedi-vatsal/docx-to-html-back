@@ -12,6 +12,13 @@ const { JSDOM } = jsdom;
 const app = express();
 
 app.use(cors({ credentials: true, origin: "http://localhost:3001" }));
+app.use(
+  cors({
+    origin: "https://docx-to-html-front.onrender.com",
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
 // Multer setup for file uploads
 const upload = multer({ dest: "/tmp" });
