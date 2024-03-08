@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({ credentials: true, origin: "http://localhost:3001" }));
 
 // Multer setup for file uploads
-const upload = multer({ dest: "/" });
+const upload = multer({ dest: "/tmp" });
 
 app.post("/upload", upload.single("file"), (req, res) => {
   mammoth
